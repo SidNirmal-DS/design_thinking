@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Thinking for Product Managers Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #58508d;
+        }
+        .kpi-number {
+             background: linear-gradient(45deg, #ff6361, #ffa600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 
+    SOURCE MATERIAL ANALYSIS: The source is the "Design Thinking Framework for Product Managers" immersive artifact. It outlines a five-phase, iterative process for problem-solving. The key concepts to visualize are the five distinct phases (Empathize, Define, Ideate, Prototype, Test), their goals, key activities, and the cyclical nature of the framework.
+
+    NARRATIVE PLAN:
+    1.  Hook: Start with a powerful headline and a key statistic on the impact of design-led thinking to grab the Product Manager's attention.
+    2.  Process Overview: Visually present the five-stage flow of Design Thinking, emphasizing its iterative, non-linear nature.
+    3.  Phase Deep Dive: Dedicate a section to each of the five phases, explaining its purpose and visualizing key activities or concepts.
+        - Empathize: Show the breakdown of user research activities.
+        - Define: Highlight the importance of the problem statement.
+        - Ideate: Compare brainstorming techniques.
+        - Prototype: Visualize the trade-offs between different prototype fidelities.
+        - Test: Show the positive impact of iteration on user satisfaction.
+    4.  Conclusion: Summarize the key takeaway - that Design Thinking is a powerful, repeatable framework for innovation.
+
+    VISUALIZATION CHOICES (NO SVG / NO MERMAID JS):
+    -   Overall Process: Goal=Organize -> Chosen Visualization=Flow Chart (Implemented with structured HTML/CSS with Tailwind and Unicode arrows). Justification: Clearly shows sequence and iterative loops without using prohibited libraries like SVG or Mermaid JS.
+    -   Empathize Phase: Goal=Compare Composition -> Chosen Visualization=Donut Chart (Chart.js/Canvas). Justification: Effectively shows the proportional breakdown of research activities in a simple, visual format.
+    -   Define Phase: Goal=Inform -> Chosen Visualization=Styled Text Block (HTML/CSS). Justification: A simple, clear way to present the "How Might We..." template without needing a complex chart.
+    -   Ideate Phase: Goal=Compare -> Chosen Visualization=Horizontal Bar Chart (Chart.js/Canvas). Justification: Best for comparing the effectiveness or volume of different named techniques.
+    -   Prototype Phase: Goal=Compare Composition -> Chosen Visualization=Stacked Bar Chart (Chart.js/Canvas). Justification: Perfectly illustrates the relationship between fidelity and effort for different prototype types, showing composition.
+    -   Test Phase: Goal=Show Change -> Chosen Visualization=Area Chart (Chart.js/Canvas). Justification: Emphasizes the cumulative improvement in user satisfaction over time through iteration.
+
+    COLOR PALETTE: "Energetic & Playful" was chosen for its vibrant, high-contrast colors that are professional yet engaging. HEX Codes: #003f5c (Dark Blue), #58508d (Purple), #bc5090 (Magenta), #ff6361 (Coral), #ffa600 (Orange).
+
+    CONFIRMATION: NO Mermaid JS was used. NO SVG was used. All visualizations are either Chart.js on Canvas or structured HTML/CSS with Tailwind.
+    -->
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#003f5c] mb-4">Mastering Product Innovation</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">A Product Manager's guide to solving complex problems and building user-centric products with the Design Thinking Framework.</p>
+        </header>
+
+        <main class="space-y-12">
+            
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8 text-center">
+                 <h2 class="text-2xl font-bold text-[#003f5c] mb-2">The Power of Design-Led Culture</h2>
+                 <p class="text-gray-600 mb-4">Companies that foster creativity and user-centric design consistently outperform their competitors. Design Thinking is the engine for that success.</p>
+                 <div class="kpi-number text-7xl md:text-8xl font-black">211%</div>
+                 <p class="font-semibold text-[#58508d]">Higher returns than the S&P 500 Index delivered by design-led companies over a 10-year period.</p>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center text-[#003f5c] mb-8">The Design Thinking Process</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">Design Thinking is not a linear path, but an iterative and cyclical process. Insights from the 'Test' phase often lead back to 'Define' or 'Ideate', ensuring continuous improvement and a solution that truly meets user needs.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-step text-center p-4 bg-gray-50 rounded-lg border-2 border-[#003f5c] w-48">
+                        <div class="text-4xl mb-2">🤔</div>
+                        <h3 class="font-bold text-[#003f5c]">1. Empathize</h3>
+                    </div>
+                    <div class="flowchart-arrow hidden md:block">→</div>
+                    <div class="flowchart-arrow block md:hidden">↓</div>
+                    <div class="flowchart-step text-center p-4 bg-gray-50 rounded-lg border-2 border-[#58508d] w-48">
+                        <div class="text-4xl mb-2">🎯</div>
+                        <h3 class="font-bold text-[#58508d]">2. Define</h3>
+                    </div>
+                    <div class="flowchart-arrow hidden md:block">→</div>
+                     <div class="flowchart-arrow block md:hidden">↓</div>
+                    <div class="flowchart-step text-center p-4 bg-gray-50 rounded-lg border-2 border-[#bc5090] w-48">
+                        <div class="text-4xl mb-2">💡</div>
+                        <h3 class="font-bold text-[#bc5090]">3. Ideate</h3>
+                    </div>
+                    <div class="flowchart-arrow hidden md:block">→</div>
+                     <div class="flowchart-arrow block md:hidden">↓</div>
+                    <div class="flowchart-step text-center p-4 bg-gray-50 rounded-lg border-2 border-[#ff6361] w-48">
+                        <div class="text-4xl mb-2">🛠️</div>
+                        <h3 class="font-bold text-[#ff6361]">4. Prototype</h3>
+                    </div>
+                    <div class="flowchart-arrow hidden md:block">→</div>
+                     <div class="flowchart-arrow block md:hidden">↓</div>
+                    <div class="flowchart-step text-center p-4 bg-gray-50 rounded-lg border-2 border-[#ffa600] w-48">
+                        <div class="text-4xl mb-2">🧪</div>
+                        <h3 class="font-bold text-[#ffa600]">5. Test</h3>
+                    </div>
+                </div>
+                <div class="text-center mt-6 text-2xl font-bold text-[#58508d]">
+                    <span>↺ Iterate ↻</span>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#003f5c] mb-4">1. Empathize: Understand Your Users</h3>
+                    <p class="text-gray-600 mb-6">The foundation of Design Thinking is a deep, empathetic understanding of the people you're designing for. This phase is about observing, engaging, and immersing yourself in the user's world to uncover their true needs and pain points.</p>
+                    <div class="chart-container">
+                        <canvas id="empathizeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#58508d] mb-4">2. Define: State the Problem</h3>
+                    <p class="text-gray-600 mb-6">After gathering user insights, you must synthesize them into a clear and actionable problem statement. A well-defined problem provides the focus and direction needed to generate effective solutions in the next phase.</p>
+                    <div class="bg-blue-50 border-l-4 border-[#58508d] p-6 rounded-r-lg">
+                        <h4 class="font-bold text-lg text-[#58508d]">The "How Might We..." Statement</h4>
+                        <p class="mt-2 text-gray-700">Frame your problem statement from the user's perspective. This format opens up possibilities rather than prescribing a solution.</p>
+                        <p class="mt-4 bg-white p-4 rounded-lg shadow-inner font-mono text-gray-800">How Might We <span class="text-[#bc5090]">[Action]</span> for <span class="text-[#ff6361]">[User Persona]</span> so that <span class="text-[#ffa600]">[Desired Outcome]</span>?</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#bc5090] mb-4">3. Ideate: Generate Solutions</h3>
+                    <p class="text-gray-600 mb-6">With a clear problem statement, it's time to brainstorm solutions. The goal is to generate a large quantity of diverse ideas. Encourage wild thinking and defer judgment to foster a creative and open environment.</p>
+                    <div class="chart-container">
+                        <canvas id="ideateChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#ff6361] mb-4">4. Prototype: Build & Represent Solutions</h3>
+                    <p class="text-gray-600 mb-6">Prototyping involves creating scaled-down, experimental versions of the solution. The aim is to test ideas quickly and cheaply, turning abstract concepts into tangible artifacts that users can interact with and provide feedback on.</p>
+                    <div class="chart-container">
+                        <canvas id="prototypeChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#ffa600] mb-4">5. Test: Get Feedback & Iterate</h3>
+                    <p class="text-gray-600 mb-6">The testing phase is where you gather feedback on your prototypes from real users. This is not the final step but a crucial part of the iterative cycle. Insights gained here are used to refine the prototype, redefine the problem, and improve the solution.</p>
+                    <div class="chart-container">
+                        <canvas id="testChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer class="text-center mt-12 text-gray-500">
+            <p>&copy; 2025 Design Thinking Infographic. A conceptual guide for modern Product Managers.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const processLabel = (label, maxLength) => {
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+            
+            const defaultPlugins = {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            family: 'Inter',
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            };
+
+            const colors = {
+                darkBlue: '#003f5c',
+                purple: '#58508d',
+                magenta: '#bc5090',
+                coral: '#ff6361',
+                orange: '#ffa600'
+            };
+
+            new Chart(document.getElementById('empathizeChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['User Interviews', 'Data Analysis', 'Persona Development', 'Empathy Mapping'],
+                    datasets: [{
+                        label: 'Time Allocation',
+                        data: [40, 25, 20, 15],
+                        backgroundColor: [colors.darkBlue, colors.purple, colors.magenta, colors.coral],
+                        borderColor: '#ffffff',
+                        borderWidth: 4,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { ...defaultPlugins, title: { display: true, text: 'Key Activities in the Empathize Phase', font: { size: 16, family: 'Inter' } } },
+                    cutout: '60%'
+                }
+            });
+
+            new Chart(document.getElementById('ideateChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Crazy Eights', 'SCAMPER', 'Round Robin Brainstorming', 'Mind Mapping'],
+                    datasets: [{
+                        label: 'Idea Volume Generated (per session)',
+                        data: [80, 65, 55, 40],
+                        backgroundColor: [colors.magenta, colors.coral, colors.orange, colors.purple],
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { ...defaultPlugins, title: { display: true, text: 'Effectiveness of Brainstorming Techniques', font: { size: 16, family: 'Inter' } } },
+                    scales: {
+                        x: { beginAtZero: true }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('prototypeChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Paper Prototype', 'Wireframe', 'Clickable Demo', 'High-Fidelity Mockup'],
+                    datasets: [{
+                        label: 'Effort',
+                        data: [10, 25, 50, 70],
+                        backgroundColor: colors.coral,
+                    }, {
+                        label: 'Fidelity',
+                        data: [20, 40, 75, 90],
+                        backgroundColor: colors.darkBlue,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { ...defaultPlugins, title: { display: true, text: 'Prototype Fidelity vs. Effort', font: { size: 16, family: 'Inter' } } },
+                    scales: {
+                        x: { stacked: true },
+                        y: { stacked: true, beginAtZero: true }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('testChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Initial Concept', 'Round 1 Test', 'Round 2 Test', 'Round 3 Test', 'Pre-Launch'],
+                    datasets: [{
+                        label: 'User Satisfaction Score (CSAT %)',
+                        data: [45, 62, 78, 88, 92],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 166, 0, 0.2)',
+                        borderColor: colors.orange,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { ...defaultPlugins, title: { display: true, text: 'Impact of Iterative Testing on User Satisfaction', font: { size: 16, family: 'Inter' } } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
